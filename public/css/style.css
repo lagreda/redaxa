@@ -1,0 +1,13 @@
+
+table a {
+    cursor: pointer;
+}
+
+.entity-search-form {
+    margin-bottom: 30px;
+}
+
+.entity-search-form button {
+    position: relative;
+    top: 3px;
+}

@@ -17,9 +17,9 @@ class CreateEcCitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('status')->default(1);
-            $table->string('additional1');
-            $table->string('additional2');
-            $table->string('additional3');
+            $table->string('additional1')->nullable();
+            $table->string('additional2')->nullable();
+            $table->string('additional3')->nullable();
             $table->timestamps();
         });
     }

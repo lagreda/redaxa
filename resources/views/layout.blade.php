@@ -17,9 +17,13 @@
     <link href="{{ asset('/vendors/nprogress/nprogress.css') }}" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="{{ asset('/vendors/switchery/dist/switchery.min.css') }}" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
   </head>
 
   <body class="nav-md">
@@ -103,7 +107,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">{{ Auth::user()->name }}
+                    {{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">                    
@@ -145,6 +149,7 @@
     <script src="{{ asset('/vendors/nprogress/nprogress.js') }}"></script>
     <!-- Chart.js -->
     <script src="{{ asset('/vendors/Chart.js/dist/Chart.min.js') }}"></script>
+    
     <!-- jQuery Sparklines -->
     <script src="{{ asset('/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
     <!-- Flot -->
@@ -162,9 +167,13 @@
     <!-- bootstrap-daterangepicker -->
     <script src="{{ asset('/vendors/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+    <!-- Switchery -->
+    <script src="{{ asset('/vendors/switchery/dist/switchery.min.js') }}"></script>
     
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('/js/custom.js') }}"></script>
+
+    <script src="{{ asset('/js/functions.js') }}"></script>
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
