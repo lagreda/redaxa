@@ -51,6 +51,7 @@
                         <table class="table table-striped">
                         <thead>
                             <tr>
+                            <th>ID</th>
                             <th>Nombre</th>                        
                             <th>Status</th>
                             <th>Editar</th>
@@ -60,6 +61,7 @@
                         <tbody>
                             @foreach($provinces as $province)
                             <tr>
+                                <td>{{ $province->id }}</td>
                                 <td>
                                     <a href="{{ URL::to('ec-province/'.$province->id.'/edit') }}">{{ $province->name }}</a>
                                 </td>
@@ -84,7 +86,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="3">                                    
+                                <td colspan="4">                                    
                                     {{ $provinces->setPath('')->appends(Request::except('page'))->links() }}                                    
                                 </td>
                                 <td style="text-align: right;">

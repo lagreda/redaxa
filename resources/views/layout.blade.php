@@ -58,12 +58,22 @@
                   <li><a href="{{ URL::to('home') }}"><i class="fa fa-home"></i> Inicio</a></li>
                   <li><a><i class="fa fa-pencil"></i> Mantenimientos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="form.html">General Form</a></li>
-                      <li><a href="form_advanced.html">Advanced Components</a></li>
-                      <li><a href="form_validation.html">Form Validation</a></li>
-                      <li><a href="form_wizards.html">Form Wizard</a></li>
-                      <li><a href="form_upload.html">Form Upload</a></li>
-                      <li><a href="form_buttons.html">Form Buttons</a></li>
+                      <li><a href="{{ URL::to('business-area') }}">Áreas de negocio</a></li>
+                      <li><a href="{{ URL::to('ec-city') }}">Ciudades Ecuador</a></li>
+                      <li><a href="{{ URL::to('civil-status') }}">Estados civil</a></li>
+                      <li><a href="{{ URL::to('students') }}">Estudiantes</a></li>
+                      <li><a href="{{ URL::to('gender') }}">Géneros</a></li>
+                      <li><a href="{{ URL::to('ethnic-group') }}">Grupos étnicos</a></li>                      
+                      <li><a href="{{ URL::to('language') }}">Idiomas</a></li>
+                      <li><a href="{{ URL::to('monthly-income') }}">Ingresos mensuales</a></li>
+                      <li><a href="{{ URL::to('academic-level') }}">Niveles académicos</a></li>
+                      <li><a href="{{ URL::to('country') }}">Países</a></li>
+                      <li><a href="{{ URL::to('job-position') }}">Posiciones laborales</a></li>
+                      <li><a href="{{ URL::to('program') }}">Programas</a></li>
+                      <li><a href="{{ URL::to('ec-province') }}">Provincias Ecuador</a></li>
+                      <li><a href="{{ URL::to('program-type') }}">Tipos de programa</a></li>
+                      <li><a href="{{ URL::to('blood-type') }}">Tipos de sangre</a></li>
+                      <li><a href="{{ URL::to('user') }}">Usuarios</a></li>
                     </ul>
                   </li>            
                   <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>

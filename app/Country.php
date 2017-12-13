@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
-    //
+    public function students()
+    {
+        return $this->hasMany("App\Student");
+    }
 }

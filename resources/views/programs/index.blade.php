@@ -62,6 +62,7 @@
                         <table class="table table-striped">
                         <thead>
                             <tr>
+                            <th>ID</th>
                             <th>Nombre</th>     
                             <th>Tipo de programa</th>                   
                             <th>Status</th>
@@ -72,6 +73,7 @@
                         <tbody>
                             @foreach($programs as $program)
                             <tr>
+                                <td>{{ $program->id }}</td>
                                 <td>
                                     <a href="{{ URL::to('program/'.$program->id.'/edit') }}">{{ $program->name }}</a>
                                 </td>
@@ -97,7 +99,7 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     {{ $programs->setPath('')->appends(Request::except('page'))->links() }}
                                 </td>
                                 <td style="text-align: right;">
