@@ -62,3 +62,9 @@ Route::get('job-status/{id}/status/{status}', 'JobStatusController@updateStatus'
 
 Route::resource('language', 'LanguageController');
 Route::get('language/{id}/status/{status}', 'LanguageController@updateStatus');
+
+Route::resource('working-area', 'WorkingAreaController');
+Route::get('working-area/{id}/status/{status}', 'WorkingAreaController@updateStatus');
+
+Route::get('api-info', 'HomeController@api');
+Route::get('api-info/business-area', 'ApiController@businessArea');

@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Country;
+use App\WorkingArea;
 use Illuminate\Support\Facades\DB;
 
-class CountryController extends Controller
+class WorkingAreaController extends Controller
 {
     public function __construct()
     {
@@ -22,13 +22,12 @@ class CountryController extends Controller
     {
         $name = $request->input('name', '');
         
-        $countries = Country::where('name', 'LIKE', '%'.$name.'%')
-                        ->orderBy('name', 'ASC')
+        $working_areas = WorkingArea::where('name', 'LIKE', '%'.$name.'%')
                         ->paginate(20);
 
-        return view('countries.index', compact(
+        return view('working_areas.index', compact(
             'name',
-            'countries'
+            'working_areas'
         ));
     }
 
@@ -39,7 +38,7 @@ class CountryController extends Controller
      */
     public function create()
     {
-        return view('countries.create');
+        return view('working_areas.create');
     }
 
     /**
@@ -55,12 +54,12 @@ class CountryController extends Controller
         ]);
 
         DB::transaction(function() use($request) {
-            $country = new Country;
-            $country->name = $request->name;
-            $country->save();
+            $working_area = new WorkingArea;
+            $working_area->name = $request->name;
+            $working_area->save();
         });
 
-        return redirect('country')->with('ok', 'ok');
+        return redirect('working-area')->with('ok', 'ok');
     }
 
     /**
@@ -82,9 +81,9 @@ class CountryController extends Controller
      */
     public function edit($id)
     {
-        $country = Country::findOrFail($id);
+        $working_area = WorkingArea::findOrFail($id);
 
-        return view('countries.edit', compact('country'));
+        return view('working_areas.edit', compact('working_area'));
     }
 
     /**
@@ -101,12 +100,12 @@ class CountryController extends Controller
         ]);
 
         DB::transaction(function() use($request, $id) {
-            $country = Country::findOrFail($id);
-            $country->name = $request->name;
-            $country->save();
+            $working_area = WorkingArea::findOrFail($id);
+            $working_area->name = $request->name;
+            $working_area->save();
         });
 
-        return redirect('country')->with('ok', 'ok');
+        return redirect('working-area')->with('ok', 'ok');
     }
 
     /**
@@ -117,23 +116,23 @@ class CountryController extends Controller
      */
     public function destroy($id)
     {
-        /*$country = Country::findOrFail($id);
-        if($country->students->count() > 0)
-            return redirect('country')->with('error', 'error');
+        $working_area = WorkingArea::findOrFail($id);
+        if($working_area->workHistories->count() > 0)
+            return redirect('working-area')->with('error', 'error');
 
-        DB::transaction(function() use($country) {
-            $country->delete();            
+        DB::transaction(function() use($working_area) {
+            $working_area->delete();            
         });
 
-        return redirect('gender')->with('ok', 'ok');*/
+        return redirect('working-area')->with('ok', 'ok');
     }
 
     public function updateStatus($id, $status)
     {
         DB::transaction(function() use($id, $status) {
-            $country = Country::findOrFail($id);
-            $country->status = $status;
-            $country->save();
+            $working_area = WorkingArea::findOrFail($id);
+            $working_area->status = $status;
+            $working_area->save();
         });
 
         return "STATUS UPDATED OK";

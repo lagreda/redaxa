@@ -16,6 +16,7 @@ class CreateWorkHistoriesTable extends Migration
         Schema::create('work_histories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('company');
+            $table->integer('company_size')->nullable();
             $table->string('address_1')->nullable();
             $table->string('address_2')->nullable();
             $table->string('phone')->nullable();
@@ -24,6 +25,8 @@ class CreateWorkHistoriesTable extends Migration
             $table->date('start_date');
             $table->integer('curret_job')->default(0);
             $table->date('finish_date')->nullable();
+            $table->decimal('yearly_sales')->nullable();
+            $table->integer('main_incomes_origin')->default(0);
             $table->timestamps();
         });
     }

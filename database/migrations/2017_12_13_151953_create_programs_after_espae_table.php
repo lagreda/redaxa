@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStudentLanguagesTable extends Migration
+class CreateProgramsAfterEspaeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateStudentLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('student_languages', function (Blueprint $table) {
+        Schema::create('programs_after_espae', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('level');
+            $table->integer('program');
+            $table->string('other')->nullable();
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();
             $table->string('additional2')->nullable();
@@ -31,6 +32,6 @@ class CreateStudentLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('student_languages');
+        Schema::dropIfExists('programs_after_espae');
     }
 }

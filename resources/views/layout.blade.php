@@ -59,6 +59,7 @@
                   <li><a><i class="fa fa-pencil"></i> Mantenimientos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ URL::to('business-area') }}">Áreas de negocio</a></li>
+                      <li><a href="{{ URL::to('working-area') }}">Áreas de trabajo</a></li>
                       <li><a href="{{ URL::to('ec-city') }}">Ciudades Ecuador</a></li>
                       <li><a href="{{ URL::to('civil-status') }}">Estados civil</a></li>
                       <li><a href="{{ URL::to('students') }}">Estudiantes</a></li>
@@ -85,7 +86,7 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-code"></i>API</a></li>
+                  <li><a href="{{ URL::to('api-info') }}"><i class="fa fa-code"></i>API</a></li>
                 </ul>
               </div>
             </div>

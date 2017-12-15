@@ -55,4 +55,9 @@ class Student extends Model
     {
         return $this->belongsTo("App\JobStatus");
     }
+
+    public function programsAfterEspae()
+    {
+        return $this->hasMany("App\ProgramsAfterEspae");
+    }
 }

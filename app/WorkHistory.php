@@ -30,4 +30,9 @@ class WorkHistory extends Model
     {
         return $this->belongsTo("App\Student");
     }
+
+    public function workingArea()
+    {
+        return $this->belongsTo("App\WorkingArea");
+    }
 }

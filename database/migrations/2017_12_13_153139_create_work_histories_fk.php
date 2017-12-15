@@ -24,6 +24,8 @@ class CreateWorkHistoriesFk extends Migration
             $table->foreign('country_id')->references('id')->on('countries');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students');
+            $table->integer('working_area_id')->unsigned();
+            $table->foreign('working_area_id')->references('id')->on('working_areas');
         });
     }
 
