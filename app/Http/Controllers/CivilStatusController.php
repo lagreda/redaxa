@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class CivilStatusController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -136,5 +131,56 @@ class CivilStatusController extends Controller
         });
 
         return "STATUS UPDATED OK";
+    }
+
+
+    public function indexAPI()
+    {
+        return CivilStatus::all();
+    }
+
+    public function showAPI($id)
+    {
+        return CivilStatus::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $civil_status = new CivilStatus;
+            $civil_status->name = $request->name;
+            $civil_status->save();
+            $object = $civil_status;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $civil_status = CivilStatus::findOrFail($id);
+            $civil_status->name = $request->name;
+            $civil_status->save();
+            $object = $civil_status;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $civil_status = CivilStatus::findOrFail($id);
+            $civil_status->delete();
+        });
+
+        return response()->json(null, 204);
     }
 }

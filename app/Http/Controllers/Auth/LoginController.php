@@ -47,7 +47,7 @@ class LoginController extends Controller
             return redirect('login');
     }
 
-    public function login(Request $request)
+    public function loginApi(Request $request)
     {
         $this->validateLogin($request);
     

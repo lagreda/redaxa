@@ -10,4 +10,24 @@ class ApiController extends Controller
     {
         return view('api.business_area');
     }
+
+    public function workingArea()
+    {
+        return view('api.working_area');
+    }
+
+    public function ecCity()
+    {
+        return view('api.ec_city');
+    }
+
+    public function civilStatus()
+    {
+        return view('api.civil_status');
+    }
+
+    public function gender()
+    {
+        return view('api.gender');
+    }
 }

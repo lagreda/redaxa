@@ -1,12 +1,12 @@
 @extends('api.api_template')
 
 @section('api_content')
-<h4>Áreas de negocio</h4>
+    <h4>Estados civil</h4>
 
     <pre>
         <code class="js">
-// ** get all business areas **********
-$ curl -X GET {{ URL::to('/') }}/api/business-area \
+// ** get all working areas **********
+$ curl -X GET {{ URL::to('/') }}/api/civil-status \
 -H "Accept: application/json" \
 -H "Authorization: Bearer [your_api_token]"
 
@@ -14,7 +14,7 @@ $ curl -X GET {{ URL::to('/') }}/api/business-area \
 [
     {
         "id":1,
-        "name":"Construccion",
+        "name":"Soltero(a)",
         "status":1,
         "additional1":null,
         "additional2":null,
@@ -23,8 +23,8 @@ $ curl -X GET {{ URL::to('/') }}/api/business-area \
         "updated_at":"2017-12-15 16:22:01"
     },
     {
-        "id":1,
-        "name":"Servicios financieros",
+        "id":2,
+        "name":"Casado(a)",
         "status":1,
         "additional1":null,
         "additional2":null,
@@ -34,15 +34,15 @@ $ curl -X GET {{ URL::to('/') }}/api/business-area \
     }
 ]
 
-// ** show individual business area **********
-$ curl -X GET {{ URL::to('/') }}/api/business-area/{id} \
+// ** show individual civil status **********
+$ curl -X GET {{ URL::to('/') }}/api/civil-status/{id} \
 -H "Accept: application/json" \
 -H "Authorization: Bearer [your_api_token]"
 
 // response example (json):
 {
     "id":1,
-    "name":"Construccion",
+    "name":"Viudo(a)",
     "status":1,
     "additional1":null,
     "additional2":null,
@@ -51,32 +51,32 @@ $ curl -X GET {{ URL::to('/') }}/api/business-area/{id} \
     "updated_at":"2017-12-15 16:22:01"
 }
 
-// ** store business area **********
-$ curl -X POST {{ URL::to('/') }}/api/business-area \
+// ** store civil status **********
+$ curl -X POST {{ URL::to('/') }}/api/civil-status \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \
--d "{\"name\": \"new_business_area\"}"
+-d "{\"name\": \"new_civil_status\"}"
 
 // response example (json) - HTTP CODE 201:
 {
-    "name":"Comercio",
+    "name":"Divorciado(a)",
     "updated_at":"2017-12-19 12:40:23",
     "created_at":"2017-12-19 12:40:23",
     "id":6
 }
 
-// ** update business area **********
-$ curl -X PUT {{ URL::to('/') }}/api/business-area/{id} \
+// ** update civil status **********
+$ curl -X PUT {{ URL::to('/') }}/api/civil-status/{id} \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \
--d "{\"name\": \"new_business_area\"}"
+-d "{\"name\": \"new_civil_status\"}"
 
 // response example (json) - HTTP CODE 200:
 {
     "id":1,
-    "name":"Construccion",
+    "name":"Soltero(a)",
     "status":1,
     "additional1":null,
     "additional2":null,
@@ -85,8 +85,8 @@ $ curl -X PUT {{ URL::to('/') }}/api/business-area/{id} \
     "updated_at":"2017-12-15 16:22:01"
 }
 
-// ** delete business area **********
-$ curl -X DELETE {{ URL::to('/') }}/api/business-area/{id} \
+// ** delete working area **********
+$ curl -X DELETE {{ URL::to('/') }}/api/civil-status/{id} \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \

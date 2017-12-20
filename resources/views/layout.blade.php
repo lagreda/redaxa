@@ -24,6 +24,13 @@
     <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+    <!-- Highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
 
   <body class="nav-md">

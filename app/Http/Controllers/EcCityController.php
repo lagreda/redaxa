@@ -9,11 +9,6 @@ use Illuminate\Support\Facades\DB;
 
 class EcCityController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -153,5 +148,58 @@ class EcCityController extends Controller
         });
 
         return "STATUS UPDATED OK";
+    }
+
+
+    public function indexAPI()
+    {
+        return EcCity::all();
+    }
+
+    public function showAPI($id)
+    {
+        return EcCity::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $city = new EcCity;
+            $city->name = $request->name;
+            $city->ec_province_id = $request->ec_province_id;
+            $city->save();
+            $object = $city;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $city = EcCity::findOrFail($id);
+            $city->name = $request->name;
+            $city->ec_province_id = $request->ec_province_id;
+            $city->save();
+            $object = $city;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $city = EcCity::findOrFail($id);
+            $city->delete();
+        });
+
+        return response()->json(null, 204);
     }
 }

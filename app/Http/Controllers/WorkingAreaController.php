@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class WorkingAreaController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     /**
      * Display a listing of the resource.
      *
@@ -136,5 +131,56 @@ class WorkingAreaController extends Controller
         });
 
         return "STATUS UPDATED OK";
+    }
+
+
+    public function indexAPI()
+    {
+        return WorkingArea::all();
+    }
+
+    public function showAPI($id)
+    {
+        return WorkingArea::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $working_area = new WorkingArea;
+            $working_area->name = $request->name;
+            $working_area->save();
+            $object = $working_area;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $working_area = WorkingArea::findOrFail($id);
+            $working_area->name = $request->name;
+            $working_area->save();
+            $object = $working_area;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $working_area = WorkingArea::findOrFail($id);
+            $working_area->delete();
+        });
+
+        return response()->json(null, 204);
     }
 }
