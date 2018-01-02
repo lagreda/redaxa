@@ -134,4 +134,55 @@ class ProgramTypeController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return ProgramType::all();
+    }
+
+    public function showAPI($id)
+    {
+        return ProgramType::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $program_type = new ProgramType;
+            $program_type->name = $request->name;
+            $program_type->save();
+            $object = $program_type;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $program_type = ProgramType::findOrFail($id);
+            $program_type->name = $request->name;
+            $program_type->save();
+            $object = $program_type;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $program_type = ProgramType::findOrFail($id);
+            $program_type->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

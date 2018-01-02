@@ -1,12 +1,12 @@
 @extends('api.api_template')
 
 @section('api_content')
-    <h4>Géneros</h4>
+    <h4>Idiomas</h4>
 
     <pre>
         <code class="js">
-// ** get all genders **********
-$ curl -X GET {{ URL::to('/') }}/api/gender \
+// ** get all languages **********
+$ curl -X GET {{ URL::to('/') }}/api/language \
 -H "Accept: application/json" \
 -H "Authorization: Bearer [your_api_token]"
 
@@ -14,7 +14,7 @@ $ curl -X GET {{ URL::to('/') }}/api/gender \
 [
     {
         "id":1,
-        "name":"Masculino",
+        "name":"Español",
         "status":1,
         "additional1":null,
         "additional2":null,
@@ -24,7 +24,7 @@ $ curl -X GET {{ URL::to('/') }}/api/gender \
     },
     {
         "id":2,
-        "name":"Femenino",
+        "name":"Inglés",
         "status":1,
         "additional1":null,
         "additional2":null,
@@ -34,15 +34,15 @@ $ curl -X GET {{ URL::to('/') }}/api/gender \
     }
 ]
 
-// ** show individual gender **********
-$ curl -X GET {{ URL::to('/') }}/api/gender/{id} \
+// ** show individual languages **********
+$ curl -X GET {{ URL::to('/') }}/api/language/{id} \
 -H "Accept: application/json" \
 -H "Authorization: Bearer [your_api_token]"
 
 // response example (json):
 {
     "id":1,
-    "name":"Masculino",
+    "name":"Alemán",
     "status":1,
     "additional1":null,
     "additional2":null,
@@ -51,32 +51,32 @@ $ curl -X GET {{ URL::to('/') }}/api/gender/{id} \
     "updated_at":"2017-12-15 16:22:01"
 }
 
-// ** store gender **********
-$ curl -X POST {{ URL::to('/') }}/api/gender \
+// ** store language **********
+$ curl -X POST {{ URL::to('/') }}/api/language \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \
--d "{\"name\": \"new_gender\"}"
+-d "{\"name\": \"new_language\"}"
 
 // response example (json) - HTTP CODE 201:
 {
-    "name":"No definido",
+    "name":"Mandarín",
     "updated_at":"2017-12-19 12:40:23",
     "created_at":"2017-12-19 12:40:23",
     "id":6
 }
 
-// ** update gender **********
-$ curl -X PUT {{ URL::to('/') }}/api/gender/{id} \
+// ** update language **********
+$ curl -X PUT {{ URL::to('/') }}/api/language/{id} \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \
--d "{\"name\": \"new_gender\"}"
+-d "{\"name\": \"new_language\"}"
 
 // response example (json) - HTTP CODE 200:
 {
     "id":1,
-    "name":"Masculino",
+    "name":"Italiano",
     "status":1,
     "additional1":null,
     "additional2":null,
@@ -85,8 +85,8 @@ $ curl -X PUT {{ URL::to('/') }}/api/gender/{id} \
     "updated_at":"2017-12-15 16:22:01"
 }
 
-// ** delete gender **********
-$ curl -X DELETE {{ URL::to('/') }}/api/gender/{id} \
+// ** delete language **********
+$ curl -X DELETE {{ URL::to('/') }}/api/language/{id} \
 -H "Accept: application/json" \
 -H "Content-type: application/json" \
 -H "Authorization: Bearer [your_api_token]" \

@@ -132,4 +132,55 @@ class LanguageController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return Language::all();
+    }
+
+    public function showAPI($id)
+    {
+        return Language::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $language = new Language;
+            $language->name = $request->name;
+            $language->save();
+            $object = $language;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $language = Language::findOrFail($id);
+            $language->name = $request->name;
+            $language->save();
+            $object = $language;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $language = Language::findOrFail($id);
+            $language->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

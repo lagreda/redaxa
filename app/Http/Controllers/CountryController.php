@@ -133,4 +133,54 @@ class CountryController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+    public function indexAPI()
+    {
+        return Country::all();
+    }
+
+    public function showAPI($id)
+    {
+        return Country::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $country = new Country;
+            $country->name = $request->name;
+            $country->save();
+            $object = $country;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $country = Country::findOrFail($id);
+            $country->name = $request->name;
+            $country->save();
+            $object = $country;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $country = Country::findOrFail($id);
+            $country->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

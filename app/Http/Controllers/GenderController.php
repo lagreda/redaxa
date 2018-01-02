@@ -132,4 +132,54 @@ class GenderController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+    public function indexAPI()
+    {
+        return Gender::all();
+    }
+
+    public function showAPI($id)
+    {
+        return Gender::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $gender = new Gender;
+            $gender->name = $request->name;
+            $gender->save();
+            $object = $gender;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $gender = Gender::findOrFail($id);
+            $gender->name = $request->name;
+            $gender->save();
+            $object = $gender;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $gender = Gender::findOrFail($id);
+            $gender->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

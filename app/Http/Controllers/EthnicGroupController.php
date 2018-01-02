@@ -132,4 +132,55 @@ class EthnicGroupController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return EthnicGroup::all();
+    }
+
+    public function showAPI($id)
+    {
+        return EthnicGroup::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $ethnic_group = new EthnicGroup;
+            $ethnic_group->name = $request->name;
+            $ethnic_group->save();
+            $object = $ethnic_group;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $ethnic_group = EthnicGroup::findOrFail($id);
+            $ethnic_group->name = $request->name;
+            $ethnic_group->save();
+            $object = $ethnic_group;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $ethnic_group = EthnicGroup::findOrFail($id);
+            $ethnic_group->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

@@ -160,4 +160,57 @@ class ProgramController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return Program::all();
+    }
+
+    public function showAPI($id)
+    {
+        return Program::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $program = new Program;
+            $program->name = $request->name;
+            $program->program_type_id = $request->program_type_id;
+            $program->save();
+            $object = $program;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $program = Program::findOrFail($id);
+            $program->name = $request->name;
+            $program->program_type_id = $request->program_type_id;
+            $program->save();
+            $object = $program;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $program = Program::findOrFail($id);
+            $program->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

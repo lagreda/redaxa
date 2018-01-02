@@ -132,4 +132,55 @@ class MonthlyIncomeController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return MonthlyIncome::all();
+    }
+
+    public function showAPI($id)
+    {
+        return MonthlyIncome::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $monthly_income = new MonthlyIncome;
+            $monthly_income->income = $request->income;
+            $monthly_income->save();
+            $object = $monthly_income;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $monthly_income = MonthlyIncome::findOrFail($id);
+            $monthly_income->income = $request->income;
+            $monthly_income->save();
+            $object = $monthly_income;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $monthly_income = MonthlyIncome::findOrFail($id);
+            $monthly_income->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

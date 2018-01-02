@@ -132,4 +132,55 @@ class JobPositionController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return JobPosition::all();
+    }
+
+    public function showAPI($id)
+    {
+        return JobPosition::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $job_position = new JobPosition;
+            $job_position->name = $request->name;
+            $job_position->save();
+            $object = $job_position;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $job_position = JobPosition::findOrFail($id);
+            $job_position->name = $request->name;
+            $job_position->save();
+            $object = $job_position;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $job_position = JobPosition::findOrFail($id);
+            $job_position->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

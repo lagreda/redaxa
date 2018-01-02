@@ -137,4 +137,54 @@ class AcademicLevelController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+    public function indexAPI()
+    {
+        return AcademicLevel::all();
+    }
+
+    public function showAPI($id)
+    {
+        return AcademicLevel::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $academic_level = new AcademicLevel;
+            $academic_level->name = $request->name;
+            $academic_level->save();
+            $object = $academic_level;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $academic_level = AcademicLevel::findOrFail($id);
+            $academic_level->name = $request->name;
+            $academic_level->save();
+            $object = $academic_level;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $academic_level = AcademicLevel::findOrFail($id);
+            $academic_level->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }

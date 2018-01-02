@@ -73,4 +73,13 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('api-info/ec-city', 'ApiController@ecCity');
     Route::get('api-info/civil-status', 'ApiController@civilStatus');
     Route::get('api-info/gender', 'ApiController@gender');
+    Route::get('api-info/ethnic-group', 'ApiController@ethnicGroup');
+    Route::get('api-info/language', 'ApiController@language');
+    Route::get('api-info/monthly-income', 'ApiController@monthlyIncome');
+    Route::get('api-info/academic-level', 'ApiController@academicLevel');
+    Route::get('api-info/country', 'ApiController@country');
+    Route::get('api-info/job-position', 'ApiController@jobPosition');
+    Route::get('api-info/program', 'ApiController@program');
+    Route::get('api-info/ec-province', 'ApiController@ecProvince');
+    Route::get('api-info/program-type', 'ApiController@programType');
 });
