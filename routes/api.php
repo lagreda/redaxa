@@ -105,4 +105,10 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('program-type', 'ProgramTypeController@storeAPI');
     Route::put('program-type/{id}', 'ProgramTypeController@updateAPI');
     Route::delete('program-type/{id}', 'ProgramTypeController@deleteAPI');
+
+    Route::get('blood-type', 'BloodTypeController@indexAPI');
+    Route::get('blood-type/{id}', 'BloodTypeController@showAPI');
+    Route::post('blood-type', 'BloodTypeController@storeAPI');
+    Route::put('blood-type/{id}', 'BloodTypeController@updateAPI');
+    Route::delete('blood-type/{id}', 'BloodTypeController@deleteAPI');
 });

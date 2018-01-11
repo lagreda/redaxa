@@ -75,4 +75,9 @@ class ApiController extends Controller
     {
         return view('api.program_type');
     }
+
+    public function bloodType()
+    {
+        return view('api.blood_type');
+    }
 }

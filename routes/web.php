@@ -82,4 +82,5 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('api-info/program', 'ApiController@program');
     Route::get('api-info/ec-province', 'ApiController@ecProvince');
     Route::get('api-info/program-type', 'ApiController@programType');
+    Route::get('api-info/blood-type', 'ApiController@bloodType');
 });

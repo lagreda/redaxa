@@ -132,4 +132,55 @@ class BloodTypeController extends Controller
 
         return "STATUS UPDATED OK";
     }
+
+
+    public function indexAPI()
+    {
+        return BloodType::all();
+    }
+
+    public function showAPI($id)
+    {
+        return BloodType::findOrFail($id);
+    }
+
+    public function storeAPI(Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($request, &$object) {
+            $blood_type = new BloodType;
+            $blood_type->name = $request->name;
+            $blood_type->save();
+            $object = $blood_type;
+        });
+
+        if($object != null)
+            return response()->json($object, 201);
+    }
+
+    public function updateAPI($id, Request $request)
+    {
+        $object = null;
+
+        DB::transaction(function() use($id, $request, &$object) {
+            $blood_type = BloodType::findOrFail($id);
+            $blood_type->name = $request->name;
+            $blood_type->save();
+            $object = $blood_type;
+        });
+
+        if($object != null)
+            return response()->json($object, 200);
+    }
+
+    public function deleteAPI($id)
+    {
+        DB::transaction(function() use($id) {
+            $blood_type = BloodType::findOrFail($id);
+            $blood_type->delete();
+        });
+
+        return response()->json(null, 204);
+    }
 }
