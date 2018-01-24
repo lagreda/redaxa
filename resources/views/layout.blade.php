@@ -86,11 +86,8 @@
                   </li>            
                   <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="chartjs.html">Chart JS</a></li>
-                      <li><a href="chartjs2.html">Chart JS2</a></li>
-                      <li><a href="morisjs.html">Moris JS</a></li>
-                      <li><a href="echarts.html">ECharts</a></li>
-                      <li><a href="other_charts.html">Other Charts</a></li>
+                      <li><a href="{{ URL::to('reports/mobility') }}">Movilidad</a></li>
+                      <li><a href="{{ URL::to('reports/final-efficiency') }}">Eficiencia terminal</a></li>
                     </ul>
                   </li>
                   <li><a href="{{ URL::to('api-info') }}"><i class="fa fa-code"></i>API</a></li>
@@ -187,11 +184,15 @@
     <script src="{{ asset('/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
     <!-- Switchery -->
     <script src="{{ asset('/vendors/switchery/dist/switchery.min.js') }}"></script>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     
     <!-- Custom Theme Scripts -->
     <script src="{{ asset('/js/custom.js') }}"></script>
 
     <script src="{{ asset('/js/functions.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}

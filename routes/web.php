@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('working-area', 'WorkingAreaController');
     Route::get('working-area/{id}/status/{status}', 'WorkingAreaController@updateStatus');
 
+    //web api
     Route::get('api-info', 'HomeController@api');
     Route::get('api-info/business-area', 'ApiController@businessArea');
     Route::get('api-info/working-area', 'ApiController@workingArea');
@@ -83,4 +84,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('api-info/ec-province', 'ApiController@ecProvince');
     Route::get('api-info/program-type', 'ApiController@programType');
     Route::get('api-info/blood-type', 'ApiController@bloodType');
+
+    //reports
+    Route::get('reports/mobility', 'ReportsController@mobility');
+    Route::get('reports/final-efficiency', 'ReportsController@finalEfficiency');
 });

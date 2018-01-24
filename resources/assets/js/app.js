@@ -16,7 +16,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('chart-example', require('./components/CharExampleComponent.vue'));
 
-const app = new Vue({
-    el: '#app'
+let app = new Vue({
+    el: '#vue_container'
 });
