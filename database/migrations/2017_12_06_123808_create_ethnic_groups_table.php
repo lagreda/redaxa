@@ -15,6 +15,7 @@ class CreateEthnicGroupsTable extends Migration
     {
         Schema::create('ethnic_groups', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('textual_id')->unique();
             $table->string('name');
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();
