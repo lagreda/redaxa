@@ -43,7 +43,7 @@ class EcCityX extends Command
         $file = public_path()."/excel/EcCity.xlsx";
         
         if(is_file($file)) //verify file existence
-        {            
+        {
             $excel = App::make('excel');
             $excel->load($file, function($reader) {
                 $elements = $reader->toArray();                       
