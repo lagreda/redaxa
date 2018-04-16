@@ -5,23 +5,23 @@ require 'vendor/autoload.php';
 
 use Illuminate\Console\Command;
 use GuzzleHttp;
-use App\AcademicLevel;
+use App\MonthlyIncome;
 
-class AcademicLevelWs extends Command
+class MonthlyIncomeWs extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'wssgap:academiclevel';
+    protected $signature = 'wssgap:monthlyincome';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Integration with SGAP web service: academic levels';
+    protected $description = 'Integration with SGAP web service: monthly incomes';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,7 @@ class AcademicLevelWs extends Command
     public function handle()
     {
         $client = new GuzzleHttp\Client(['base_uri' => env('SGAP_API_URI')]);
-        $response = $client->request('GET', 'NivelAcademico', [
+        $response = $client->request('GET', 'RangosIngresos', [
             'headers' => ['Token' => env('SGAP_API_TOKEN')]
         ]);
         if($response->getStatusCode() == 200)
@@ -53,10 +53,10 @@ class AcademicLevelWs extends Command
             {
                 foreach($json_content as $key => $item)
                 {
-                    $academic_level = new AcademicLevel();
-                    $academic_level->name = $item->nombre;
-                    $academic_level->grade = $key + 1;
-                    $academic_level->save();
+                    $monthly_income = new MonthlyIncome();
+                    $monthly_income->textual_id = $item->id;
+                    $monthly_income->income = $item->rango;
+                    $monthly_income->save();
                 }
                 $this->info('SGAP API request finished succesfully');
             }

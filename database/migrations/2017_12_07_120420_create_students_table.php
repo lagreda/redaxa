@@ -15,13 +15,13 @@ class CreateStudentsTable extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('legal_id')->unique();
-            $table->string('passport_id')->unique();
+            $table->string('legal_id');
+            $table->string('passport_id')->nullable();
             $table->string('photo')->nullable();
-            $table->integer('program_group')->nullable();
+            $table->integer('program_group');
             $table->string('name');
             $table->string('surname');
-            $table->string('main_email')->unique();
+            $table->string('main_email')->nullable();
             $table->string('mobile_number')->nullable();
             $table->string('home_number')->nullable();
             $table->string('work_number')->nullable();

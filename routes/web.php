@@ -67,6 +67,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('working-area', 'WorkingAreaController');
     Route::get('working-area/{id}/status/{status}', 'WorkingAreaController@updateStatus');
 
+    Route::resource('student', 'StudentController');
+
     //web api
     Route::get('api-info', 'HomeController@api');
     Route::get('api-info/business-area', 'ApiController@businessArea');

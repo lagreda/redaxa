@@ -15,6 +15,7 @@ class CreateMonthlyIncomesTable extends Migration
     {
         Schema::create('monthly_incomes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('textual_id')->unique();
             $table->string('income');
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();

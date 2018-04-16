@@ -35,7 +35,7 @@
             {{ csrf_field() }}
               <h1>REDAXA</h1>
               <div>
-                <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus />
+              <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus />
 
                 @if ($errors->has('email'))
                     <span class="help-block">

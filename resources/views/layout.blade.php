@@ -9,6 +9,9 @@
 
     <title>ESPAE | REDAXA | @yield('title')</title>
 
+    <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
+
     <!-- Bootstrap -->
     <link href="{{ asset('/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Font Awesome -->
@@ -69,7 +72,7 @@
                       <li><a href="{{ URL::to('working-area') }}">Áreas de trabajo</a></li>
                       <li><a href="{{ URL::to('ec-city') }}">Ciudades Ecuador</a></li>
                       <li><a href="{{ URL::to('civil-status') }}">Estados civil</a></li>
-                      <li><a href="{{ URL::to('students') }}">Estudiantes</a></li>
+                      <li><a href="{{ URL::to('student') }}">Estudiantes</a></li>
                       <li><a href="{{ URL::to('gender') }}">Géneros</a></li>
                       <li><a href="{{ URL::to('ethnic-group') }}">Grupos étnicos</a></li>                      
                       <li><a href="{{ URL::to('language') }}">Idiomas</a></li>
@@ -131,7 +134,7 @@
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
                   </ul>
-                </li>          
+                </li>
               </ul>
             </nav>
           </div>
@@ -162,8 +165,6 @@
     <script src="{{ asset('/vendors/fastclick/lib/fastclick.js') }}"></script>
     <!-- NProgress -->
     <script src="{{ asset('/vendors/nprogress/nprogress.js') }}"></script>
-    <!-- Chart.js -->
-    <script src="{{ asset('/vendors/Chart.js/dist/Chart.min.js') }}"></script>
     
     <!-- jQuery Sparklines -->
     <script src="{{ asset('/vendors/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
@@ -191,8 +192,6 @@
     <script src="{{ asset('/js/custom.js') }}"></script>
 
     <script src="{{ asset('/js/functions.js') }}"></script>
-
-    <script src="{{ asset('js/app.js') }}"></script>
 
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
