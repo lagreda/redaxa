@@ -68,11 +68,11 @@
                   <li><a href="{{ URL::to('home') }}"><i class="fa fa-home"></i> Inicio</a></li>
                   <li><a><i class="fa fa-pencil"></i> Mantenimientos <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="{{ URL::to('student') }}">Repositorio</a></li>
                       <li><a href="{{ URL::to('business-area') }}">Áreas de negocio</a></li>
                       <li><a href="{{ URL::to('working-area') }}">Áreas de trabajo</a></li>
                       <li><a href="{{ URL::to('ec-city') }}">Ciudades Ecuador</a></li>
                       <li><a href="{{ URL::to('civil-status') }}">Estados civil</a></li>
-                      <li><a href="{{ URL::to('student') }}">Estudiantes</a></li>
                       <li><a href="{{ URL::to('gender') }}">Géneros</a></li>
                       <li><a href="{{ URL::to('ethnic-group') }}">Grupos étnicos</a></li>                      
                       <li><a href="{{ URL::to('language') }}">Idiomas</a></li>
@@ -82,6 +82,7 @@
                       <li><a href="{{ URL::to('job-position') }}">Posiciones laborales</a></li>
                       <li><a href="{{ URL::to('program') }}">Programas</a></li>
                       <li><a href="{{ URL::to('ec-province') }}">Provincias Ecuador</a></li>
+                      <li><a href="{{ URL::to('job-status') }}">Situación laboral</a></li>
                       <li><a href="{{ URL::to('program-type') }}">Tipos de programa</a></li>
                       <li><a href="{{ URL::to('blood-type') }}">Tipos de sangre</a></li>
                       <li><a href="{{ URL::to('user') }}">Usuarios</a></li>
@@ -90,7 +91,6 @@
                   <li><a><i class="fa fa-bar-chart-o"></i> Reportes <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="{{ URL::to('reports/mobility') }}">Movilidad</a></li>
-                      <li><a href="{{ URL::to('reports/final-efficiency') }}">Eficiencia terminal</a></li>
                     </ul>
                   </li>
                   <li><a href="{{ URL::to('api-info') }}"><i class="fa fa-code"></i>API</a></li>
@@ -100,10 +100,7 @@
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Configuraciones">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>        
+            <div class="sidebar-footer hidden-small">     
               <a data-toggle="tooltip" data-placement="top" title="Cerrar sesión" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -128,11 +125,10 @@
                     {{ Auth::user()->name }}
                     <span class=" fa fa-angle-down"></span>
                   </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">                    
-                    <li><a href="javascript:;">Configuraciones</a></li>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa fa-sign-out pull-right"></i> Cerrar sesión</a></li>
+                                                     document.getElementById('logout-form').submit();"><i class="glyphicon glyphicon-off" style="position: relative; top: 3px; margin-right: 10px;"></i> Cerrar sesión</a></li>
                   </ul>
                 </li>
               </ul>

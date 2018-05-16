@@ -39,7 +39,7 @@ class CreateStudentsTable extends Migration
             $table->integer('current_job_experience_time')->nullable();
             $table->integer('current_managerial_experience_time')->nullable();
             $table->integer('planning_to_open_company')->nullable();
-            $table->integer('main_obstacle_create_company')->nullable();            
+            $table->string('main_obstacle_create_company')->nullable();            
             $table->integer('had_promotion_after_espae')->nullable();
             $table->integer('had_incomes_increase')->nullable();
             $table->integer('had_responsabilities_increase')->nullable();
@@ -52,11 +52,13 @@ class CreateStudentsTable extends Migration
             $table->integer('would_recomend_espae')->nullable();
             $table->integer('graduate_services_wish')->nullable();
             $table->integer('satisfaction_level_graduate_relation')->nullable();
-            $table->integer('other_programs_espae_in_future')->nullable();                  
+            $table->integer('other_programs_espae_in_future')->nullable();    
+            $table->date('espae_start_date')->nullable();
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();
             $table->string('additional2')->nullable();
             $table->string('additional3')->nullable();
+            $table->string('external_token');
             $table->timestamps();
         });
     }

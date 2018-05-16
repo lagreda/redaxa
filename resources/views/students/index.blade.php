@@ -1,12 +1,12 @@
 @extends('layout')
 
-@section('title', 'Estudiantes')
+@section('title', 'Repositorio de alumnos y ex alumnos')
 
 @section('content')
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h2>Estudiantes</h2>
+                <h2>Repositorio de alumnos y ex alumnos</h2>
             </div>
         </div>
 
@@ -21,10 +21,18 @@
                 </div>
                 <div class="x_content">
                     <div class="entity-search-form">
-                        <form class="form-inline">
+                        <form class="form-inline" id="students-form">
                             <div class="form-group">
-                                <label for="ex3">Buscar</label>
-                                <input type="text" id="ex3" value="{{ $definition }}" class="form-control" name="definition" placeholder="Cédula, nombre, apellido" style="width: 220px;">
+                                <label for="name">Nombre</label>
+                                <input type="text" id="name" value="{{ $name }}" class="form-control" name="name" placeholder="Nombre" style="width: 220px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Apellido</label>
+                                <input type="text" id="surname" value="{{ $surname }}" class="form-control" name="surname" placeholder="Apellido" style="width: 220px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="legal_id">Cédula</label>
+                                <input type="text" id="legal_id" value="{{ $legal_id }}" class="form-control" name="legal_id" placeholder="Cédula" style="width: 220px;">
                             </div>
                             <div class="form-group">
                                 <label for="ex4">Programa</label>                                
@@ -42,21 +50,20 @@
                                 <input type="text" id="ex6" value="{{ $program_group }}" class="form-control" name="program_group" placeholder="Promoción" style="width: 150px;">
                             </div>
                             <button type="submit" class="btn btn-default">Buscar</button>
+                            <button type="button" class="btn btn-success" onclick="submitExcelForm();">Exportar a Excel</button>
                         </form>
                     </div>
 
                     @if(session('ok'))
                     <div class="alert alert-success alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                         Transacción realizada con éxito <span class="fa fa-check"></span>
                     </div>
                     @endif
 
                     @if(session('error'))
                     <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span>
-                        </button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
                         Error al realizar la transacción <span class="fa fa-check"></span>
                     </div>
                     @endif
@@ -70,6 +77,7 @@
                             <th>Programa</th>
                             <th>Promoción</th>
                             <th>Detalles</th>
+                            <th>Editar</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -81,13 +89,14 @@
                                     <td>{{ $student->program->name }}</td>
                                 @endif
                                 <td style="text-align: center;">{{ $student->program_group }}</td>
-                                <td><a href="#">Detalles</a></td>
+                                <td><a href="{{ URL::to('student/'.$student->id) }}">Detalles</a></td>
+                                <td><a href="{{ URL::to('student/'.$student->id.'/edit') }}">Editar</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
-                                <td colspan="4">
+                                <td colspan="5">
                                     {{ $students->setPath('')->appends(Request::except('page'))->links() }}
                                 </td>
                                 <td style="text-align: right;">
@@ -102,4 +111,12 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function submitExcelForm() {
+            var form = $("#students-form");
+            form.attr('action', '{{ URL::to('excel-student') }}');
+            form.submit();
+        }
+    </script>
 @endsection

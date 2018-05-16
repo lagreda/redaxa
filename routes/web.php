@@ -14,7 +14,9 @@
 Route::get('/', 'Auth\LoginController@verifyAuth');
 Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/home', function() {
+        return redirect('/student');
+    });
 
     Route::resource('user', 'UserController');
     Route::get('user/{id}/status/{status}', 'UserController@updateStatus');
@@ -68,6 +70,7 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('working-area/{id}/status/{status}', 'WorkingAreaController@updateStatus');
 
     Route::resource('student', 'StudentController');
+    Route::get('excel-student', 'StudentController@excel');
 
     //web api
     Route::get('api-info', 'HomeController@api');
@@ -90,4 +93,16 @@ Route::group(['middleware' => 'auth'], function() {
     //reports
     Route::get('reports/mobility', 'ReportsController@mobility');
     Route::get('reports/final-efficiency', 'ReportsController@finalEfficiency');
+    Route::post('reports/before-espae-job-position', 'ReportsController@beforeEspaeJobPosition');
+    Route::post('reports/had-promotion-after-espae', 'ReportsController@hadPromotionAfterEspae');
+    Route::post('reports/had-incomes-increase', 'ReportsController@hadIncomesIncrease');
+    Route::post('reports/had-responsabilities-increase', 'ReportsController@hadResponsabilitiesIncrease');
+    Route::post('reports/reality-vs-expectative', 'ReportsController@realityVsExpectative');
+    Route::post('reports/belong-level-espae', 'ReportsController@belongLevelEspae');
+    Route::post('reports/work-knowledge-value', 'ReportsController@workKnowledgeValue');
+    Route::post('reports/life-knowledge-value', 'ReportsController@lifeKnowledgeValue');
+    Route::post('reports/satisfaction-level-espae', 'ReportsController@satisfactionLevelEspae');
 });
+//external form for students
+Route::get('form/{ext_token}', 'StudentController@externalForm');
+Route::post('store-form', 'StudentController@storeExternalForm');

@@ -60,4 +60,9 @@ class Student extends Model
     {
         return $this->hasMany("App\ProgramsAfterEspae");
     }
+
+    public function academicHistory()
+    {
+        return $this->hasMany("App\AcademicHistory");
+    }
 }

@@ -1,0 +1,78 @@
+
+body {
+    background-image: url('../img/geometry.png');
+}
+
+.header {
+    background: white;
+    padding: 5px 0;
+    margin-bottom: 40px;
+    box-shadow: 0px 2px 15px #999999;
+}
+
+.header .container .row {
+    position: relative;
+}
+
+.header .row h2 {
+    text-align: right;
+}
+
+.header img {
+    width: 200px;
+}
+
+form {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.footer {
+    background: white;
+    padding: 20px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.form-panel {
+    margin-bottom: 40px;
+    display: none;
+}
+
+.navigator button {
+    position: relative;
+    top: -7px;
+}
+
+.datepicker {
+    cursor: pointer;
+}
+
+.btn-primary {
+    display: none;
+}
+
+.no-student {
+    text-align: center;
+    padding: 250px 0;
+}
+
+#storeOk {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .header .logo-holder {
+        text-align: center;
+    }
+
+    .header .row h2 {
+        text-align: center;
+        font-size: 20px;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+}

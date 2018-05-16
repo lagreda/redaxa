@@ -55,13 +55,13 @@
               <div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Recordar mi usuario
                     </label>
                 </div>
               </div>
               <div>
                 <button type="submit" class="btn btn-primary">
-                    Login
+                    Iniciar sesión
                 </button>
               </div>
 

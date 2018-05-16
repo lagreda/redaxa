@@ -11,3 +11,23 @@ table a {
     position: relative;
     top: 3px;
 }
+
+.report_title {
+    background-color: #1ABB9C;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.ind_report {
+    margin-bottom: 30px;
+}
+
+.student_detail_table tbody td span {
+    color: #26B99A;
+    font-weight: bold;
+}
+
+.eul {
+    border-bottom: 1px dashed #E6E9ED;
+    padding-bottom: 5px;
+}
