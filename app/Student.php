@@ -65,4 +65,13 @@ class Student extends Model
     {
         return $this->hasMany("App\AcademicHistory");
     }
+
+    protected $fillable = [
+        'legal_id',
+        'program_id',
+        'program_group',
+        'name',
+        'surname',
+        'main_email'
+    ];
 }

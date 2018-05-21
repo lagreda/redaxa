@@ -90,6 +90,7 @@ class StudentEvelyn extends Command
                     $name = $n3." ".$n4;
 
                     $srcbirthdate = $element['birth_date'];
+                    /*dd($srcbirthdate);
                     $srcbirthdate = explode("/", $srcbirthdate);
                     $birthdate = "";
                     if(count($srcbirthdate) == 3)
@@ -98,8 +99,10 @@ class StudentEvelyn extends Command
                         $month = $srcbirthdate[0];
                         $day = $srcbirthdate[1];
                         if($month <= 12)
-                            $birthdate = $year."-".$month."-".$day;
+                            $birthdate = "19".$year."-".$month."-".$day;
                     }
+
+                    dd($birthdate);*/
                     
                     $student = new Student;
                     $student->legal_id = $element['legal_id'];
@@ -112,8 +115,8 @@ class StudentEvelyn extends Command
                         $student->gender_id = $gender_id;
                     $student->home_number = $element['home_number'];
                     $student->work_number = $element['work_number'];
-                    if($birthdate != '' && $birthdate != '--')
-                        $student->birth_date = $birthdate;
+                    if($srcbirthdate != '')
+                        $student->birth_date = $srcbirthdate;
                     $student->home_address_1 = $element['home_address_1'];
                     $student->program_id = $program_id;
                     $student->country_id_birth = $element['country_id_birth'];
@@ -121,6 +124,7 @@ class StudentEvelyn extends Command
                     $student->ec_city_id_birth = $element['ec_city_id_birth'];
                     $student->ec_city_id_residence = $element['ec_city_id_residence'];
                     $student->external_token = md5(uniqid(rand(), true));
+                    $student->graduated_from_espae = $element['graduated'];
                     $student->save();
 
                     //store academic history

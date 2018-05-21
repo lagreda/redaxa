@@ -32,6 +32,20 @@
                             <tbody>
                                 <tr>
                                     <td>
+                                        <span>Graduado de ESPAE</span>
+                                    </td>
+                                    <td>
+                                        <b>
+                                            @if($student->graduated_from_espae == "1")
+                                            SI
+                                            @else
+                                            NO
+                                            @endif
+                                        </b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <span>Cédula</span>
                                     </td>
                                     <td><b>{{ $student->legal_id }}</b></td>
@@ -208,6 +222,20 @@
                                         @else
                                         --
                                         @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Destacado</span>
+                                    </td>
+                                    <td>
+                                        <b>
+                                            @if($student->starred == "1")
+                                            SI
+                                            @else
+                                            NO
+                                            @endif
+                                        </b>
                                     </td>
                                 </tr>
                             </tbody>

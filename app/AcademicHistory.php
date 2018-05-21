@@ -20,4 +20,11 @@ class AcademicHistory extends Model
     {
         return $this->belongsTo("App\Student");
     }
+
+    protected $fillable = [
+        'title',
+        'institution',
+        'academic_level_id',
+        'student_id',
+    ];
 }

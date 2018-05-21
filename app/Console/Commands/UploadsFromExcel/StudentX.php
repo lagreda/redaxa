@@ -83,6 +83,7 @@ class StudentX extends Command
                     $student->ec_city_id_birth = $element['ec_city_id_birth'];
                     $student->ec_city_id_residence = $element['ec_city_id_residence'];
                     $student->external_token = md5(uniqid(rand(), true));
+                    $student->graduated_from_espae = "1";
                     $student->save();
 
                     //store academic history
