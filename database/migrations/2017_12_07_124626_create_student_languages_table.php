@@ -15,7 +15,7 @@ class CreateStudentLanguagesTable extends Migration
     {
         Schema::create('student_languages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('level');
+            $table->integer('level')->nullable();
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();
             $table->string('additional2')->nullable();

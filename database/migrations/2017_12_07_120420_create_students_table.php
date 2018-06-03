@@ -54,11 +54,14 @@ class CreateStudentsTable extends Migration
             $table->integer('satisfaction_level_graduate_relation')->nullable();
             $table->integer('other_programs_espae_in_future')->nullable();    
             $table->date('espae_start_date')->nullable();
+            $table->integer('graduated_from_espae')->default(0);
+            $table->integer('starred')->default(0);
+            $table->text('comments')->nullable();
             $table->integer('status')->default(1);
             $table->string('additional1')->nullable();
             $table->string('additional2')->nullable();
             $table->string('additional3')->nullable();
-            $table->string('external_token');
+            $table->string('external_token')->nullable();
             $table->timestamps();
         });
     }

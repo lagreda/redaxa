@@ -14,17 +14,17 @@ class CreateWorkHistoriesFk extends Migration
     public function up()
     {
         Schema::table('work_histories', function (Blueprint $table) {
-            $table->integer('business_area_id')->unsigned();
+            $table->integer('business_area_id')->nullable()->unsigned();
             $table->foreign('business_area_id')->references('id')->on('business_areas');
-            $table->integer('job_position_id')->unsigned();
+            $table->integer('job_position_id')->nullable()->unsigned();
             $table->foreign('job_position_id')->references('id')->on('job_positions');
-            $table->integer('monthly_income_id')->unsigned();
+            $table->integer('monthly_income_id')->nullable()->unsigned();
             $table->foreign('monthly_income_id')->references('id')->on('monthly_incomes');
-            $table->integer('country_id')->unsigned();
+            $table->integer('country_id')->nullable()->unsigned();
             $table->foreign('country_id')->references('id')->on('countries');
             $table->integer('student_id')->unsigned();
             $table->foreign('student_id')->references('id')->on('students');
-            $table->integer('working_area_id')->unsigned();
+            $table->integer('working_area_id')->nullable()->unsigned();
             $table->foreign('working_area_id')->references('id')->on('working_areas');
         });
     }

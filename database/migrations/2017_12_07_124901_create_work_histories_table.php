@@ -22,7 +22,7 @@ class CreateWorkHistoriesTable extends Migration
             $table->string('phone')->nullable();
             $table->string('ext')->nullable();
             $table->string('work_email')->nullable();
-            $table->date('start_date');
+            $table->date('start_date')->nullable();
             $table->integer('curret_job')->default(0);
             $table->date('finish_date')->nullable();
             $table->decimal('yearly_sales')->nullable();

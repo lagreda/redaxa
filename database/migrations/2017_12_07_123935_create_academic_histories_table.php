@@ -18,8 +18,8 @@ class CreateAcademicHistoriesTable extends Migration
             $table->string('title');
             $table->string('specialty')->nullable();
             $table->string('legal_reference_code')->nullable();
-            $table->string('institution');
-            $table->string('graduation_year');
+            $table->string('institution')->nullable();
+            $table->string('graduation_year')->nullable();
             $table->timestamps();
         });
     }
