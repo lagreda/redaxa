@@ -40,12 +40,16 @@ class StudentController extends Controller
             $program_group_query = "%%";
         else
             $program_group_query = $program_group;
+        $graduated_from_espae = $request->input('graduated_from_espae', '');
+        $starred = $request->input('starred', '');
 
         $students = Student::where('program_id', 'LIKE', $program_id)
                 ->where('program_group', 'LIKE', $program_group_query)
                 ->where('name', 'LIKE', '%'.$name.'%')
                 ->where('surname', 'LIKE', '%'.$surname.'%')
                 ->where('legal_id', 'LIKE', '%'.$legal_id.'%')
+                ->where('graduated_from_espae', 'LIKE', '%'.$graduated_from_espae.'%')
+                ->where('starred', 'LIKE', '%'.$starred.'%')
                 ->paginate(20);
 
         $programs = Program::where('status', '=', '1')->get();
@@ -57,7 +61,9 @@ class StudentController extends Controller
             'students',
             'programs',
             'program_id',
-            'program_group'
+            'program_group',
+            'graduated_from_espae',
+            'starred'
         ));
     }
 
@@ -225,6 +231,9 @@ class StudentController extends Controller
             $student->facebook_url = $request->facebook_url;
             $student->twitter_url = $request->twitter_url;
             $student->zip_code = $request->zip_code;
+            $student->graduated_from_espae = $request->graduated_from_espae;
+            $student->starred = $request->starred;
+            $student->comments = $request->comments;
             $student->country_id_birth = $request->country_id_birth;
             $student->ec_city_id_birth = $request->ec_city_id_birth;
             $student->country_id_residence = $request->country_id_residence;
@@ -483,12 +492,14 @@ class StudentController extends Controller
                 ->where('legal_id', 'LIKE', '%'.$legal_id.'%')
                 ->get();
 
-            $filename = "students".date('YmdHis');
-            $excel = App::make('excel');
-            $excel->create($filename, function($excel) use($students ) {
-                $excel->sheet('Visitantes', function($sheet) use($students ) {
-                    $sheet->loadView('students.excel', array('students' => $students));
-                });
-            })->download('xlsx');
+        //dd($students);
+
+        $filename = "students".date('YmdHis');
+        $excel = App::make('excel');
+        $excel->create($filename, function($excel) use($students ) {
+            $excel->sheet('Visitantes', function($sheet) use($students ) {
+                $sheet->loadView('students.excel', array('students' => $students));
+            });
+        })->download('xlsx');
     }
 }

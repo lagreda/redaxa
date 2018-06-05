@@ -53,6 +53,7 @@ class BloodTypeX extends Command
                     $blood_type = new BloodType;
                     $blood_type->id = $element['id'];
                     $blood_type->name = $element['name'];
+                    $blood_type->textual_id = $element['textual_id'];
                     $blood_type->save();
                     $bar->advance();
                 }

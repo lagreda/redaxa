@@ -31,6 +31,11 @@
             <th>Valor de conocimientos en vida</th>
             <th>Satisfacción con ESPAE</th>
             <th>Recomendaría ESPAE?</th>
+            <th>País de nacimiento</th>
+            <th>País de residencia</th>
+            <th>Ciudad (Ecuador) de nacimiento</th>
+            <th>Ciudad (Ecuador) de residencia</th>
+            <th>Tipo de sangre</th>
             <th>Estado civil</th>
             <th>Género</th>
             <th>Grupo étnico</th>
@@ -57,10 +62,38 @@
                 @endif
             </td>
             <td>{{ $student->main_obstacle_create_company }}</td>
-            <td>{{ $student->had_promotion_after_espae }}</td>
-            <td>{{ $student->had_incomes_increase }}</td>
-            <td>{{ $student->had_responsabilities_increase }}</td>
-            <td>{{ $student->reality_vs_expectative }}</td>
+            <td>
+                @if($student->had_promotion_after_espae == '1')
+                SI
+                @elseif($student->had_promotion_after_espae == '2')
+                NO
+                @endif
+            </td>
+            <td>
+                @if($student->had_incomes_increase == '1')
+                SI
+                @elseif($student->had_incomes_increase == '2')
+                NO
+                @endif
+            </td>
+            <td>
+                @if($student->had_responsabilities_increase == '1')
+                SI
+                @elseif($student->had_responsabilities_increase == '2')
+                NO
+                @endif
+            </td>
+            <td>
+                @if($student->reality_vs_expectative == '1')
+                Mejor de lo que me esperaba
+                @elseif($student->reality_vs_expectative == '2')
+                Igual a lo que me esperaba
+                @elseif($student->reality_vs_expectative == '3')
+                Peor de lo que me esperaba
+                @elseif($student->reality_vs_expectative == '4')
+                No tenía ninguna expectativa
+                @endif
+            </td>
             <td>{{ $student->belong_level_espae }}</td>
             <td>{{ $student->work_knowledge_value }}</td>
             <td>{{ $student->life_knowledge_value }}</td>
@@ -70,6 +103,41 @@
                 SI
                 @elseif($student->would_recomend_espae == '2')
                 NO
+                @endif
+            </td>
+            <td>
+                @if(count($student->countryBirth) > 0)
+                {{ $student->countryBirth->name }}
+                @else
+                --
+                @endif
+            </td>
+            <td>
+                @if(count($student->countryResidence) > 0)
+                {{ $student->countryResidence->name }}
+                @else
+                --
+                @endif
+            </td>
+            <td>
+                @if(count($student->cityBirth) > 0)
+                {{ $student->cityBirth->name }}
+                @else
+                --
+                @endif
+            </td>
+            <td>
+                @if(count($student->cityResidence) > 0)
+                {{ $student->cityResidence->name }}
+                @else
+                --
+                @endif
+            </td>
+            <td>
+                @if(count($student->bloodType) > 0)
+                {{ $student->bloodType->name }}
+                @else
+                --
                 @endif
             </td>
             <td>

@@ -49,6 +49,23 @@
                                 <label for="ex6">Promoción</label>
                                 <input type="text" id="ex6" value="{{ $program_group }}" class="form-control" name="program_group" placeholder="Promoción" style="width: 150px;">
                             </div>
+                            <div class="form-group">
+                                <label for="ex6">Graduados</label>
+                                <select name="graduated_from_espae" id="graduated_from_espae" class="form-control">
+                                    <option value="">- TODOS -</option>
+                                    <option value="1" @if($graduated_from_espae == '1') selected @endif >SI</option>
+                                    <option value="0" @if($graduated_from_espae == '0') selected @endif >NO</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="ex6">Destacados</label>
+                                <select name="starred" id="starred" class="form-control">
+                                    <option value="">- TODOS -</option>
+                                    <option value="1" @if($starred == '1') selected @endif >SI</option>
+                                    <option value="0" @if($starred == '0') selected @endif >NO</option>
+                                </select>
+                            </div>
+                            <br>
                             <button type="submit" class="btn btn-default">Buscar</button>
                             <button type="button" class="btn btn-success" onclick="submitExcelForm();">Exportar a Excel</button>
                         </form>

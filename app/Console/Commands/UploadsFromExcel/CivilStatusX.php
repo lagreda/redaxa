@@ -53,6 +53,7 @@ class CivilStatusX extends Command
                     $civil_status = new CivilStatus;
                     $civil_status->id = $element['id'];
                     $civil_status->name = $element['name'];
+                    $civil_status->textual_id = $element['textual_id'];
                     $civil_status->save();
                     $bar->advance();
                 }

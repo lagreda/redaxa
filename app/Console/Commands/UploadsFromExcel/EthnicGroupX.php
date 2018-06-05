@@ -53,6 +53,7 @@ class EthnicGroupX extends Command
                     $ethnic_group = new EthnicGroup;
                     $ethnic_group->id = $element['id'];
                     $ethnic_group->name = $element['name'];
+                    $ethnic_group->textual_id = $element['textual_id'];
                     $ethnic_group->save();
                     $bar->advance();
                 }

@@ -53,6 +53,7 @@ class GenderX extends Command
                     $gender = new Gender;
                     $gender->id = $element['id'];
                     $gender->name = $element['name'];
+                    $gender->textual_id = $element['textual_id'];
                     $gender->save();
                     $bar->advance();
                 }

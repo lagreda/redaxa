@@ -69,82 +69,82 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobile_number">Celular <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="mobile_number">Celular
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="mobile_number" name="mobile_number" value="{{ $student->mobile_number }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="mobile_number" name="mobile_number" value="{{ $student->mobile_number }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="home_number">Número de casa <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="home_number">Número de casa
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="home_number" name="home_number" value="{{ $student->home_number }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="home_number" name="home_number" value="{{ $student->home_number }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="work_number">Número de trabajo <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="work_number">Número de trabajo 
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="work_number" name="work_number" value="{{ $student->work_number }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="work_number" name="work_number" value="{{ $student->work_number }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="birth_date">Fecha de nacimiento <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="birth_date">Fecha de nacimiento 
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="birth_date" name="birth_date" value="{{ $student->birth_date }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="birth_date" name="birth_date" value="{{ $student->birth_date }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="home_address_1">Código postal <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="home_address_1">Código postal
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="home_address_1" name="home_address_1" value="{{ $student->home_address_1 }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="home_address_1" name="home_address_1" value="{{ $student->home_address_1 }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zip_code">Dirección de domicilio <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="zip_code">Dirección de domicilio
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="zip_code" name="zip_code" value="{{ $student->zip_code }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="zip_code" name="zip_code" value="{{ $student->zip_code }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin_url">URL LinkedIn <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="linkedin_url">URL LinkedIn
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="linkedin_url" name="linkedin_url" value="{{ $student->linkedin_url }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="linkedin_url" name="linkedin_url" value="{{ $student->linkedin_url }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="facebook_url">URL Facebook <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="facebook_url">URL Facebook 
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="facebook_url" name="facebook_url" value="{{ $student->facebook_url }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="facebook_url" name="facebook_url" value="{{ $student->facebook_url }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="facebook_url">URL Twitter <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="facebook_url">URL Twitter
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="twitter_url" name="twitter_url" value="{{ $student->twitter_url }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="twitter_url" name="twitter_url" value="{{ $student->twitter_url }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="country_id_birth">País de nacimiento <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="country_id_birth">País de nacimiento
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="country_id_birth" id="country_id_birth" class="form-control" required="required">
+                                <select name="country_id_birth" id="country_id_birth" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($countries as $country)
                                     <option value="{{ $country->id }}"
@@ -155,10 +155,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ec_city_id_birth">Ciudad (Ecuador) de nacimiento <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ec_city_id_birth">Ciudad (Ecuador) de nacimiento
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="ec_city_id_birth" id="ec_city_id_birth" class="form-control" required="required">
+                                <select name="ec_city_id_birth" id="ec_city_id_birth" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($cities as $city)
                                     <option value="{{ $city->id }}"
@@ -169,10 +169,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="country_id_residence">País de residencia <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="country_id_residence">País de residencia
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="country_id_residence" id="country_id_residence" class="form-control" required="required">
+                                <select name="country_id_residence" id="country_id_residence" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($countries as $country)
                                     <option value="{{ $country->id }}"
@@ -183,10 +183,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ec_city_id_residence">Ciudad (Ecuador) de residencia <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ec_city_id_residence">Ciudad (Ecuador) de residencia
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="ec_city_id_residence" id="ec_city_id_residence" class="form-control" required="required">
+                                <select name="ec_city_id_residence" id="ec_city_id_residence" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($cities as $city)
                                     <option value="{{ $city->id }}"
@@ -197,10 +197,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="civil_status_id">Estado civil <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="civil_status_id">Estado civil
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="civil_status_id" id="civil_status_id" class="form-control" required="required">
+                                <select name="civil_status_id" id="civil_status_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($civil_status as $cs)
                                     <option value="{{ $cs->id }}"
@@ -211,10 +211,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="blood_type_id">Tipo de sangre <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="blood_type_id">Tipo de sangre
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="blood_type_id" id="blood_type_id" class="form-control" required="required">
+                                <select name="blood_type_id" id="blood_type_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($blood_types as $blood_type)
                                     <option value="{{ $blood_type->id }}"
@@ -225,10 +225,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender_id">Género <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="gender_id">Género
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="gender_id" id="gender_id" class="form-control" required="required">
+                                <select name="gender_id" id="gender_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($genders as $gender)
                                     <option value="{{ $gender->id }}"
@@ -239,16 +239,48 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ethnic_group_id">Grupo étnico <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="ethnic_group_id">Grupo étnico
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="ethnic_group_id" id="ethnic_group_id" class="form-control" required="required">
+                                <select name="ethnic_group_id" id="ethnic_group_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($ethnic_groups as $ethnic_group)
                                     <option value="{{ $ethnic_group->id }}"
                                     @if($student->ethnic_group_id == $ethnic_group->id) selected @endif>{{ $ethnic_group->name }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="graduated_from_espae">Graduado <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select name="graduated_from_espae" id="graduated_from_espae" class="form-control" required="required">
+                                    <option value="1" @if($student->graduated_from_espae == '1') selected @endif >SI</option>
+                                    <option value="0" @if($student->graduated_from_espae == '0') selected @endif>NO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="starred">Destacado <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select name="starred" id="starred" class="form-control" required="required">
+                                    <option value="1" @if($student->starred == '1') selected @endif >SI</option>
+                                    <option value="0" @if($student->starred == '0') selected @endif>NO</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="comments">Comentarios <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <textarea name="comments" id="comments" class="form-control">
+                                    {{ $student->comments }}
+                                </textarea>
                             </div>
                         </div>
 
@@ -280,10 +312,10 @@
 
                         <h4 class="eul">Situación laboral</h4>
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="job_status_id">Situación laboral<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="job_status_id">Situación laboral
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="job_status_id" id="job_status_id" class="form-control" required="required">
+                                <select name="job_status_id" id="job_status_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($job_status as $js)
                                     <option value="{{ $js->id }}"
@@ -294,10 +326,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="business_area_id">Sector empresarial<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="business_area_id">Sector empresarial
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="business_area_id" id="business_area_id" class="form-control" required="required">
+                                <select name="business_area_id" id="business_area_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($business_areas as $business_area)
                                     <option value="{{ $business_area->id }}"
@@ -308,18 +340,18 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="company">Compañía<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="company">Compañía
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="company" name="company" value="{{ $work_history->company }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="company" name="company" value="{{ $work_history->company }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="job_position_id">Posición laboral<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="job_position_id">Posición laboral
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="job_position_id" id="job_position_id" class="form-control" required="required">
+                                <select name="job_position_id" id="job_position_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($job_positions as $job_position)
                                     <option value="{{ $job_position->id }}"
@@ -330,10 +362,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="working_area_id">Departamento funcional<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="working_area_id">Departamento funcional
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="working_area_id" id="working_area_id" class="form-control" required="required">
+                                <select name="working_area_id" id="working_area_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($working_areas as $working_area)
                                     <option value="{{ $working_area->id }}"
@@ -344,10 +376,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="monthly_income_id">Rango de ingreso mensual<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="monthly_income_id">Rango de ingreso mensual
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="monthly_income_id" id="monthly_income_id" class="form-control" required="required">
+                                <select name="monthly_income_id" id="monthly_income_id" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($monthly_incomes as $monthly_income)
                                     <option value="{{ $monthly_income->id }}"
@@ -362,10 +394,10 @@
                         <h4 class="eul">Mobilidad laboral y expectativas</h4>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_promotion_after_espae">Tuvo ascenso laboral durante o después de programa en ESPAE?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_promotion_after_espae">Tuvo ascenso laboral durante o después de programa en ESPAE?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="had_promotion_after_espae" id="had_promotion_after_espae" class="form-control" required="required">
+                                <select name="had_promotion_after_espae" id="had_promotion_after_espae" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="1" @if($student->had_promotion_after_espae == "1") selected @endif>SI</option>
                                     <option value="2" @if($student->had_promotion_after_espae == "2") selected @endif>NO</option>
@@ -374,10 +406,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_incomes_increase">Incremento salarial durante o después de programa en ESPAE?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_incomes_increase">Incremento salarial durante o después de programa en ESPAE?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="had_incomes_increase" id="had_incomes_increase" class="form-control" required="required">
+                                <select name="had_incomes_increase" id="had_incomes_increase" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="1" @if($student->had_incomes_increase == "1") selected @endif>SI</option>
                                     <option value="2" @if($student->had_incomes_increase == "2") selected @endif>NO</option>
@@ -386,10 +418,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_responsabilities_increase">Incremento de responsabilidades durante o después de ESPAE?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="had_responsabilities_increase">Incremento de responsabilidades durante o después de ESPAE?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="had_responsabilities_increase" id="had_responsabilities_increase" class="form-control" required="required">
+                                <select name="had_responsabilities_increase" id="had_responsabilities_increase" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="1" @if($student->had_responsabilities_increase == "1") selected @endif>SI</option>
                                     <option value="2" @if($student->had_responsabilities_increase == "2") selected @endif>NO</option>
@@ -398,10 +430,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="reality_vs_expectative">Su situación actual comparada a sus expectativas<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="reality_vs_expectative">Su situación actual comparada a sus expectativas
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="reality_vs_expectative" id="reality_vs_expectative" class="form-control" required="required">
+                                <select name="reality_vs_expectative" id="reality_vs_expectative" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($real_vs_expect as $rvs_key => $rvs_value)
                                     <option value="{{ $rvs_key }}"
@@ -413,10 +445,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="belong_level_espae">Nivel de pertenencia con ESPAE<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="belong_level_espae">Nivel de pertenencia con ESPAE
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="belong_level_espae" id="belong_level_espae" class="form-control" required="required">
+                                <select name="belong_level_espae" id="belong_level_espae" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="0" @if($student->belong_level_espae == "0") selected @endif>0 - Bajo</option>
                                     <option value="1" @if($student->belong_level_espae == "1") selected @endif>1</option>
@@ -429,10 +461,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="work_knowledge_value">Utilidad de conocimientos de ESPAE en el trabajo<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="work_knowledge_value">Utilidad de conocimientos de ESPAE en el trabajo
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="work_knowledge_value" id="work_knowledge_value" class="form-control" required="required">
+                                <select name="work_knowledge_value" id="work_knowledge_value" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="0" @if($student->work_knowledge_value == "0") selected @endif>0 - Nada útil</option>
                                     <option value="1" @if($student->work_knowledge_value == "1") selected @endif>1</option>
@@ -445,10 +477,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="life_knowledge_value">Utilidad de conocimientos de ESPAE en la vida <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="life_knowledge_value">Utilidad de conocimientos de ESPAE en la vida
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="life_knowledge_value" id="life_knowledge_value" class="form-control" required="required">
+                                <select name="life_knowledge_value" id="life_knowledge_value" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="0" @if($student->life_knowledge_value == "0") selected @endif>0 - Nada útil</option>
                                     <option value="1" @if($student->life_knowledge_value == "1") selected @endif>1</option>
@@ -461,10 +493,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="satisfaction_level_espae">Nivel de satisfacción con ESPAE<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="satisfaction_level_espae">Nivel de satisfacción con ESPAE
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="satisfaction_level_espae" id="satisfaction_level_espae" class="form-control" required="required">
+                                <select name="satisfaction_level_espae" id="satisfaction_level_espae" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="0" @if($student->satisfaction_level_espae == "0") selected @endif>0 - Nada satisfecho</option>
                                     <option value="1" @if($student->satisfaction_level_espae == "1") selected @endif>1</option>
@@ -477,10 +509,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="would_recomend_espae">Recomendaría ESPAE?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="would_recomend_espae">Recomendaría ESPAE?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="would_recomend_espae" id="would_recomend_espae" class="form-control" required="required">
+                                <select name="would_recomend_espae" id="would_recomend_espae" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="1" @if($student->would_recomend_espae == "1") selected @endif>SI</option>
                                     <option value="2" @if($student->would_recomend_espae == "2") selected @endif>NO</option>
@@ -489,10 +521,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="other_programs_espae_in_future">Qué otros cursos desea tomar en ESPAE?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="other_programs_espae_in_future">Qué otros cursos desea tomar en ESPAE?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="other_programs_espae_in_future" id="other_programs_espae_in_future" class="form-control" required="required">
+                                <select name="other_programs_espae_in_future" id="other_programs_espae_in_future" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($programs_af_espae as $pae_key => $pae_value)
                                     <option value="{{ $pae_key }}"
@@ -504,10 +536,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="graduate_services_wish">Otro servicio como graduado?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="graduate_services_wish">Otro servicio como graduado?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="graduate_services_wish" id="graduate_services_wish" class="form-control" required="required">
+                                <select name="graduate_services_wish" id="graduate_services_wish" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     @foreach($espae_graduate_services as $egs_key =>$egs_value)
                                     <option value="{{ $egs_key }}" 
@@ -519,10 +551,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="planning_to_open_company">Planea abrir compañía?<span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="planning_to_open_company">Planea abrir compañía?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <select name="planning_to_open_company" id="planning_to_open_company" class="form-control" required="required">
+                                <select name="planning_to_open_company" id="planning_to_open_company" class="form-control">
                                     <option value="">- Seleccionar uno(a) -</option>
                                     <option value="1" @if($student->planning_to_open_company == "1") selected @endif>SI</option>
                                     <option value="2" @if($student->planning_to_open_company == "2") selected @endif>NO</option>
@@ -531,10 +563,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="main_obstacle_create_company">En su opinión, principal obstáculo para crear compañía? <span class="required">*</span>
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="main_obstacle_create_company">En su opinión, principal obstáculo para crear compañía?
                             </label>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="main_obstacle_create_company" name="main_obstacle_create_company" value="{{ $student->main_obstacle_create_company }}" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="text" id="main_obstacle_create_company" name="main_obstacle_create_company" value="{{ $student->main_obstacle_create_company }}" class="form-control col-md-7 col-xs-12">
                             </div>
                         </div>
 

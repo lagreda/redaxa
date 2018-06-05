@@ -238,6 +238,14 @@
                                         </b>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td>
+                                        <span>Comentarios</span>
+                                    </td>
+                                    <td>
+                                        {{ $student->comments }}
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
 
